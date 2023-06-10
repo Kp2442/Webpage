@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shift Handover</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-image: url(Micron.svg);
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+
+<body style="font-family: 'Nunito', sans-serif;">
+  <nav class="navbar bg-primary" data-bs-theme="dark">
+    <div class="container">
+      <div class="navbar-brand">Shift Handover</div>
+      <a href="#" style="text-decoration: none;">
+        <img src="./Micron-logo_white.svg" alt="Micron-logo_white" height="30vh" width="100vw">
+        <strong>
+          <p style="margin-bottom: 0; color: #fff;">TDR Ops</p>
+        </strong>
+      </a>
+    </div>
+  </nav>
+  <div class = "container">
+    <p class="fs-3 mb-5 mt-4" style="font-weight: 700;">Shift - <%= shift %></p>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Handovers</th>
+          <th scope="col">Assigned By</th>
+          <th scope="col">Followed By</th>
+          <th scope="col">Ticket Number</th>
+          <th scope="col">Comments</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% let i=1 %>
+        <% for (var handover of handovers) { %>
+          <tr>
+            <th scope="row"> <%= i %> </th>
+            <td> <%= handover.handovers%> </td>
+            <td> <%= handover.assignedBy %> </td>
+            <td> <%= handover.followedBy %> </td>
+            <td> <%= handover.ticketNumber %> </td>
+            <td> <%= handover.comments %> </td>
+            <td> <%= handover.email %> </td>
+          </tr>
+        <% i++;} %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
